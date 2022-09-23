@@ -26,7 +26,7 @@ const grid = {
   
 };
 
-export default function ModalCountry(props) {
+export default function ModalCountry(props: any) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -86,13 +86,13 @@ export default function ModalCountry(props) {
           </Typography>
           <Typography variant="body1">
             <strong> Timezones: </strong>
-            {props.item.timezones.map((timezone) => (
+            {props.item.timezones.map((timezone: string[]) => (
               <span>{timezone} </span>
             ))}{" "}
           </Typography>
           <Typography variant="body1">
             <strong> Continents: </strong>
-            {props.item.continents.map((continent) => (
+            {props.item.continents.map((continent: string[]) => (
               <span>{continent} </span>
             ))}{" "}
           </Typography>

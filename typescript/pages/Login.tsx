@@ -9,6 +9,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { FormControl } from "@mui/material";
 import users from '../users.json'
+import { Userinfo } from '../types/Userinfo';
 
 
 const theme = createTheme();
@@ -16,17 +17,21 @@ const theme = createTheme();
 
 export default function Login() {
 
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({
+    username: '',
+    name: '',
+    password: '',
+  })
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
   
     const data = new FormData(event.currentTarget);
 
-    const userlog = users.find(user => user.username===data.get("username"))
-    const passlog = users.find(user => user.password===data.get("password"))
+    const userlog: Userinfo | undefined = users.find(user => user.username===data.get("username"))
+    const passlog: Userinfo | undefined = users.find(user => user.password===data.get("password"))
 
-    if(userlog && passlog){
+    if(userlog&& passlog){
       setUser(userlog)
       window.localStorage.setItem(
         'loggedEjercicioUser', JSON.stringify(userlog)
@@ -36,7 +41,7 @@ export default function Login() {
     }
   };
 
-  if(user){
+  if(user.name!=''){
     return <Box
     sx={{
       marginTop: 8,

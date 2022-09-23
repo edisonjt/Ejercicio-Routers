@@ -1,16 +1,16 @@
-import { Button, Checkbox, FormControl, Table, TableBody, TableCell, TableContainer, TableRow, TextField } from "@mui/material";
-import React, { useState } from "react";
+import { Button, Checkbox, FormControl,  TableCell,  TableRow, TextField } from "@mui/material";
+import { useState } from "react";
 
-const Todo = (props) => {
+const Todo = (props: any) => {
   const [isEditing, setEditing] = useState(false);
 
   const [newName, setNewName] = useState('');
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     setNewName(event.target.value);
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
     props.editTask(props.id, newName);
     setNewName("");

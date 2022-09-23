@@ -2,11 +2,11 @@ import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } f
 import React from 'react'
 import ModalCountry from './ModalCountry'
 
-const Country = ({countries=[]}) => {
+const Country = ({countries =[]}) => {
   return (
     <>
         {
-          countries.map((item,index)=> (
+          countries.map((item: any,index: number)=> (
             <Grid item  xs={12} sm={6} md={4}>
             <Card key={index}  sx={{ height: '100%', display: 'flex', flexDirection: 'column',  maxWidth: 345}}>
               <CardMedia component='img' image={item.flags.png}  alt='flag'/>

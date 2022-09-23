@@ -7,7 +7,7 @@ import ToDoList from '../pages/ToDoList'
 import Menu from './Menu'
 
 
-export const RutasMenu = () => {
+const RutasMenu = () => {
 
   const[user, setUser] = useState(null)
  
@@ -44,3 +44,5 @@ export const RutasMenu = () => {
     </>
   )
 }
+
+export default RutasMenu

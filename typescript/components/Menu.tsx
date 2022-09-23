@@ -9,7 +9,11 @@ import { useState } from 'react';
 
 const Menu = () => {
 
-  const[user, setUser] = useState(null)
+  const[user, setUser] = useState({
+    username: '',
+    name: '',
+    password: '',
+  })
  
   useEffect(() =>{
     const loggedUserJSON = window.localStorage.getItem('loggedEjercicioUser')

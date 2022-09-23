@@ -3,15 +3,15 @@ import React, { useState } from "react";
 
 
 
-const TodoForm = (props) => {
+const TodoForm = (props: any) => {
  
     const [name, setName] = useState('');
     
-    const handleChange = (event) =>{
+    const handleChange = (event: any) =>{
         setName(event.target.value);
     }
 
-    const handleSubmit = (event) =>{
+    const handleSubmit = (event: any) =>{
         event.preventDefault();
         if(name.trim() !== ''){
             props.addTask(name);

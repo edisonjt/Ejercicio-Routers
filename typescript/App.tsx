@@ -1,4 +1,4 @@
-import {RutasMenu} from './components/RutasMenu';
+import RutasMenu from './components/RutasMenu';
 
 
 function App() {

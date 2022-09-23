@@ -9,7 +9,7 @@ const ToDoList = () => {
 
   const [tasks, setTasks] = useState(data)
 
-  const addTask = (name) => {
+  const addTask = (name: string) => {
     const newTask = {
       id:`todo-${nanoid()}`, 
       name, 
@@ -19,7 +19,7 @@ const ToDoList = () => {
     setTasks([...tasks, newTask])
   }
 
-  const toggleTaskCompleted = (id) =>{
+  const toggleTaskCompleted = (id: string) =>{
     const updatedTasks = tasks.map((task) => {
       if (id === task.id) {        
         return {...task, completed: !task.completed}
@@ -30,12 +30,12 @@ const ToDoList = () => {
     setTasks(updatedTasks);
   }
 
-  const deleteTask = (id) => {
+  const deleteTask = (id: string) => {
     const remainingTasks = tasks.filter((task) => id !== task.id);
     setTasks(remainingTasks);
   }
 
-  function editTask(id, newName) {
+  function editTask(id: string, newName: string) {
     const editedTaskList = tasks.map((task) => {
       if (id === task.id) {
         return {...task, name: newName}
